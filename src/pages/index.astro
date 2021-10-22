@@ -4,7 +4,37 @@ import Image from "../components/Image.astro"
 ---
 
 <BaseLayout>
-    <h1 class="leading-tight tracking-tighter text-4xl">Hello</h1>
+    <section class="pt-20 bg-white dark:bg-black">
+        <div class="relative pad-x">
+            <header class="pb-20 space-y-2 lg:pb-0">
+                <h1>Marketer.</h1>
+                <h1>Developer.</h1>
+                <h1>Photo Nut.</h1>
+                <h1>Car Nut.</h1>
+            </header>
 
-    <Image />
+            <div class="hidden md:block lg:mr-8 lg:absolute lg:top-0 lg:right-0 lg:w-5/12">
+                <Image
+                    src="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_005.jpg"
+                    classes="h-[400px] sm:h-[680px] object-cover w-full shadow-2xl md:rounded-sm"
+                />
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-100 dark:bg-black">
+        <section class="pt-24 sm:pt-48 md:pt-64 -mt-28 sm:-mt-32 md:-mt-18 lg:-mt-16 lg:pt-80">
+            <div class="grid grid-cols-2 pad-x sm:grid-cols-1">
+                <h1 class="col-span-2 pb-2 text-6xl text-gray-300 dark:text-gray-600 sm:col-span-1 md:text-8xl">
+                    Latest<br />Photos
+                </h1>
+
+                <section class="order-2 col-span-2 -mt-6 gallery sm:order-3">
+                </section>
+
+                <div class="order-3 col-span-2 mt-8 sm:mt-0 sm:order-2 sm:col-span-1 sm:self-center">
+                </div>
+            </div>
+        </section>
+    </div>
 </BaseLayout>
