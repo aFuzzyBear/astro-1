@@ -1,0 +1,35 @@
+---
+var Cloudinary = require('cloudinary');
+
+Cloudinary.config({ 
+  cloud_name: 'eriksolsen', 
+  api_key: '846751719918497', 
+  api_secret: '-W4Qg3-D6GNmxTrB4MXICU3BV98',
+  secure: true
+});
+
+/*
+ik.getFileMetadata("porsche-930-2021_023.jpg", function(error, result) {
+    if(error) console.log(error);
+    else console.log(result);
+});
+
+const widths = [550, 700, 900, 1100, 2000];
+const {
+	src,
+	width,
+	height,
+	sizes = '100vw',
+	alt,
+	classes,
+	loading = 'lazy'
+} = Astro.props;
+
+let image = ik + src;
+let srcset = widths
+	.map((width) => {
+		return `${image}?tr=w-${width} ${width}w`;
+	})
+	.join(",");
+*/
+---
