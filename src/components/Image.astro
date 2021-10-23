@@ -1,13 +1,13 @@
 ---
 const cdn = "http://cdn.eriksolsen.com/images/";
-const uc = "https://0ca93eb51f9f128c47f5.ucr.io/" + cdn;
+const uploadcare = "https://0ca93eb51f9f128c47f5.ucr.io/" + cdn;
 
 const {
 	src,
 	classes,
 } = Astro.props;
 
-let url = uc + src;
+let url = uploadcare + src;
 ---
 
 <img src={url} class={classes} />
