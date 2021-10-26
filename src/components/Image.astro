@@ -1,10 +1,11 @@
 ---
 const cdn = "http://cdn.eriksolsen.com/images/";
-const widths = [2000, 1440, 1080, 720, 480];
-const formats = ['avif', 'webp', 'jpg'];
+const widths = [2000];
+//const widths = [2000, 1440, 1080, 720, 480];
+const formats = ['avif', 'webp', 'jpeg'];
 
 const {
-	src,
+	file,
 	classes,
     sizes
 } = Astro.props;
@@ -14,12 +15,13 @@ let source = formats.map(format => {
         <source
             type="image/${format}"
             srcset="${widths.map(function(width) {
-                return `${cdn}${src}-w${width}.${format} ${width}w`
+                return `${cdn}${file}-w${width}.${format} ${width}w`
             })}"
+            sizes="${sizes}"
         >`;
 })
 
-let url = `${cdn}${src}-w2000.jpg`;
+let url = `${cdn}${file}-w2000.jpg`;
 ---
 
 <picture>
