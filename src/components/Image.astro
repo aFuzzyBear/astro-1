@@ -1,13 +1,28 @@
 ---
 const cdn = "http://cdn.eriksolsen.com/images/";
-const uploadcare = "https://0ca93eb51f9f128c47f5.ucr.io/" + cdn;
+const widths = [2000, 1440, 1080, 720, 480];
+const formats = ['avif', 'webp', 'jpg'];
 
 const {
 	src,
 	classes,
+    sizes
 } = Astro.props;
 
-let url = uploadcare + src;
+let source = formats.map(format => {
+    return `
+        <source
+            type="image/${format}"
+            srcset="${widths.map(function(width) {
+                return `${cdn}${src}-w${width}.${format} ${width}w`
+            })}"
+        >`;
+})
+
+let url = `${cdn}${src}-w2000.jpg`;
 ---
 
-<img src={url} class={classes} />
+<picture>
+    {source}
+    <img src={url} class={classes}>
+</picture>
