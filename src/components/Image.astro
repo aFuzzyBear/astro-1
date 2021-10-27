@@ -1,13 +1,11 @@
 ---
 const cdn = "http://cdn.eriksolsen.com/images/";
-const widths = [2000];
-//const widths = [2000, 1440, 1080, 720, 480];
+const widths = [2000, 1440, 1080, 720, 480];
 const formats = ['avif', 'webp', 'jpg'];
 
 const {
 	file,
-	classes,
-    sizes
+	classes
 } = Astro.props;
 
 let source = formats.map(format => {
@@ -17,7 +15,6 @@ let source = formats.map(format => {
             srcset="${widths.map(function(width) {
                 return `${cdn}${file}-w${width}.${format} ${width}w`
             })}"
-            sizes="${sizes}"
         >`;
 })
 
