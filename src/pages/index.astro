@@ -1,6 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 import Image from "../components/Image.astro"
+
+let gallery = [
+    "shoots/2021/2021-06-23-porsche-930/porsche-930-2021_001",
+    "shoots/2021/2021-06-23-porsche-930/porsche-930-2021_002",
+    "shoots/2021/2021-06-23-porsche-930/porsche-930-2021_003",
+    "shoots/2021/2021-06-23-porsche-930/porsche-930-2021_004",
+    "shoots/2021/2021-06-23-porsche-930/porsche-930-2021_005"
+]
 ---
 
 <BaseLayout>
@@ -31,6 +39,9 @@ import Image from "../components/Image.astro"
                 </h1>
 
                 <section class="order-2 col-span-2 -mt-6 gallery sm:order-3">
+                    {gallery.map((image) => (
+                        <Image file={image} />
+                    ))}
                 </section>
 
                 <div class="order-3 col-span-2 mt-8 sm:mt-0 sm:order-2 sm:col-span-1 sm:self-center">
